@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authorised Service Centre — Servis Mesin Cuci Tanjung Priok Jakarta Utara</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+        :root {
+            --biru: #0052CC;
+            --biru-tua: #003D99;
+            --hijau: #25AE60;
+            --abu: #F5F7FA;
+            --teks: #333;
+        }
+        body {
+            color: var(--teks);
+            line-height: 1.6;
+        }
+        .konten {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Bagian Atas / Hero */
+        .hero {
+            background: linear-gradient(135deg, #EAF4FF, #D7E9FF);
+            padding: 3rem 0;
+        }
+        .hero .konten {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+        .hero-teks h1 {
+            font-size: 2rem;
+            color: var(--biru-tua);
+            margin-bottom: 0.5rem;
+        }
+        .hero-teks h2 {
+            font-size: 1.2rem;
+            color: var(--biru);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+        .hero-teks p {
+            color: #444;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-gambar {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,82,204,0.15);
+        }
+        .hero-gambar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .info-kontak {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
+        }
+        .info-kontak div {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--hijau);
+            color: white;
+            padding: 0.85rem 1.6rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        .btn-wa:hover {
+            background: #1fa055;
+        }
+
+        /* Statistik */
+        .statistik {
+            background: white;
+            padding: 3rem 0;
+        }
+        .grid-stat {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            text-align: center;
+        }
+        .kartu-stat h3 {
+            font-size: 2.2rem;
+            color: var(--biru);
+            margin-bottom: 0.3rem;
+        }
+        .kartu-stat p {
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* Layanan */
+        .layanan {
+            background: var(--abu);
+            padding: 4rem 0;
+        }
+        .judul-bagian {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .judul-bagian h2 {
+            font-size: 1.6rem;
+            color: var(--biru-tua);
+            margin-bottom: 0.5rem;
+        }
+        .grid-layanan {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .kartu-layanan {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        .kartu-layanan .ikon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .kartu-layanan h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--biru);
+        }
+        .kartu-layanan ul {
+            list-style: none;
+        }
+        .kartu-layanan li {
+            padding: 0.3rem 0;
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Galeri */
+        .galeri {
+            padding: 4rem 0;
+            background: white;
+        }
+        .grid-galeri {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+        .galeri-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .galeri-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Form Booking */
+        .booking {
+            padding: 4rem 0;
+            background: var(--abu);
+        }
+        .form-booking {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,82,204,0.08);
+        }
+        .form-booking h3 {
+            text-align: center;
+            color: var(--biru-tua);
+            margin-bottom: 1.5rem;
+        }
+        .form-booking input, .form-booking textarea, .form-booking select {
+            width: 100%;
+            padding: 0.9rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+        .form-booking input:focus, .form-booking select:focus, .form-booking textarea:focus {
+            outline: none;
+            border-color: var(--biru);
+        }
+        .form-booking button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #0F2B48;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        .footer-isi {
+            text-align: center;
+        }
+        .footer-isi h3 {
+            margin-bottom: 1rem;
+            color: #87C4FF;
+        }
+        .footer-isi p {
+            margin-bottom: 0.5rem;
+            color: #ddd;
+        }
+        .bawah-footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsif HP */
+        @media (max-width: 900px) {
+            .hero .konten, .grid-stat, .grid-layanan, .grid-galeri {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 576px) {
+            .hero .konten, .grid-stat, .grid-layanan, .grid-galeri {
+                grid-template-columns: 1fr;
+            }
+            .hero-teks h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Bagian Atas -->
+<section class="hero">
+    <div class="konten">
+        <div class="hero-teks">
+            <h1>AUTHORISED SERVICE CENTRE</h1>
+            <h2>SOLUSI TEPAT UNTUK MESIN CUCI ANDA</h2>
+            <p><strong>Service Profesional & Bergaransi Resmi.</strong><br>Kami siap memberikan layanan terbaik untuk mesin cuci Anda dengan teknisi berpengalaman, sparepart original, dan garansi service.</p>
+            
+            <div class="info-kontak">
+                <div>📞 <strong>+62 856-9290-3378</strong></div>
+                <div>📍 Tanjung Priok, Jakarta Utara</div>
+            </div>
+            
+            <a href="https://wa.me/6285692903378?text=Halo%2C%20saya%20ingin%20konsultasi%20dan%20pesan%20jasa%20servis%20mesin%20cuci" target="_blank" class="btn-wa">💬 KONSULTASI GRATIS via WhatsApp</a>
+        </div>
+        <div class="hero-gambar">
+            <img src="https://images.unsplash.com/photo-1585771724684-3826546b7d44?w=600&h=400&fit=crop" alt="Teknisi Servis Mesin Cuci Profesional">
+        </div>
+    </div>
+</section>
+
+<!-- Statistik -->
+<section class="statistik">
+    <div class="konten">
+        <div class="grid-stat">
+            <div class="kartu-stat">
+                <h3>10+</h3>
+                <p>Tahun Pengalaman</p>
+            </div>
+            <div class="kartu-stat">
+                <h3>500+</h3>
+                <p>Unit Mesin Selesai</p>
+            </div>
+            <div class="kartu-stat">
+                <h3>100+</h3>
+                <p>Pelanggan Puas</p>
+            </div>
+            <div class="kartu-stat">
+                <h3>100%</h3>
+                <p>Garansi Service</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Layanan Kami -->
+<section class="layanan">
+    <div class="konten">
+        <div class="judul-bagian">
+            <h2>LAYANAN KAMI</h2>
+            <p>Layanan Service Terbaik Kami — melayani berbagai jenis perbaikan dan perawatan mesin cuci</p>
+        </div>
+        <div class="grid-layanan">
+            <div class="kartu-layanan">
+                <div class="ikon">🛠️</div>
+                <h3>Service Mesin Cuci</h3>
+                <ul>
+                    <li>✔ Mesin tidak berputar</li>
+                    <li>✔ Bocor / rembes</li>
+                    <li>✔ Error elektronik</li>
+                    <li>✔ Semua merek & tipe</li>
+                </ul>
+            </div>
+            <div class="kartu-layanan">
+                <div class="ikon">⚙️</div>
+                <h3>Perawatan / Maintenance</h3>
+                <ul>
+                    <li>✔ Cek kondisi mesin</li>
+                    <li>✔ Pembersihan komponen</li>
+                    <li>✔ Pelumasan</li>
+                    <li>✔ Perawatan berkala</li>
+                </ul>
+            </div>
+            <div class="kartu-layanan">
+                <div class="ikon">🔩</div>
+                <h3>Sparepart Original</h3>
+                <ul>
+                    <li>✔ Sparepart resmi</li>
+                    <li>✔ Bergaransi</li>
+                    <li>✔ Berkualitas tinggi</li>
+                    <li>✔ Harga transparan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Galeri Pekerjaan -->
+<section class="galeri">
+    <div class="konten">
+        <div class="judul-bagian">
+            <h2>📸 GALERI HASIL PEKERJAAN</h2>
+            <p>Dokumentasi layanan servis mesin cuci yang telah kami kerjakan</p>
+        </div>
+        <div class="grid-galeri">
+            <div class="galeri-item">
+                <img src="https://images.unsplash.com/photo-1582589184798-5a890b8a1b36?w=400&h=300&fit=crop" alt="Servis Mesin Cuci - Pemeriksaan">
+            </div>
+            <div class="galeri-item">
+                <img src="https://images.unsplash.com/photo-1556911161-9f54532f8d08?w=400&h=300&fit=crop" alt="Servis Mesin Cuci - Perbaikan">
+            </div>
+            <div class="galeri-item">
+                <img src="https://images.unsplash.com/photo-1577896845130-1e2e73c5b240?w=400&h=300&fit=crop" alt="Servis Mesin Cuci - Pemasangan">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Service -->
+<section class="booking">
+    <div class="konten">
+        <div class="form-booking">
+            <h3>📅 BOOKING SERVICE SEKARANG</h3>
+            <p style="text-align:center; margin-bottom:1.5rem; color:#555;">Isi data singkat dan kami akan menghubungi Anda via WhatsApp.</p>
+            <form action="https://wa.me/6285692903378" method="get" target="_blank">
+                <input type="hidden" name="text" value="--- DATA BOOKING SERVICE ---%0A%0A">
+                <input type="text" name="text" placeholder="Nama Lengkap" required>
+                <input type="tel" placeholder="Nomor WhatsApp / Telepon" required>
+                <input type="text" name="text" placeholder="Alamat Lengkap">
+                <select name="text" required>
+                    <option value="">Pilih Jenis Kerusakan / Layanan</option>
+                    <option>Service Mesin Cuci — Tidak berputar</option>
+                    <option>Service Mesin Cuci — Bocor / rembes</option>
+                    <option>Service Mesin Cuci — Error elektronik</option>
+                    <option>Perawatan / Maintenance berkala</option>
+                    <option>Ganti Sparepart</option>
+                    <option>Lainnya</option>
+                </select>
+                <textarea name="text" rows="4" placeholder="Keterangan tambahan / Jenis mesin cuci"></textarea>
+                <button type="submit" class="btn-wa">💬 KIRIM PESAN KE WHATSAPP</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="konten footer-isi">
+        <h3>AUTHORISED SERVICE CENTRE</h3>
+        <p>Melayani service mesin cuci profesional, cepat, bergaransi dan terpercaya.</p>
+        <p>📞 <strong>+62 856-9290-3378</strong></p>
+        <p>📍 Tanjung Priok, Jakarta Utara</p>
+        <p>🕒 Setiap Hari 08.00 — 21.00 WIB</p>
+        
+        <div class="bawah-footer">
+            &copy; 2026 Authorised Service Centre — Servis Mesin Cuci Tanjung Priok Jakarta Utara
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
